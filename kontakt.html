@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGym - Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidhuvud med navigation -->
+    <header>
+        <div class="site-header">
+            <a class="site-title" href="index.html">WebGym</a>
+            <nav aria-label="Huvudnavigation">
+                <ul>
+                    <li><a href="traning-och-utbud.html">Träning och utbud</a></li>
+                    <li><a href="grupptraning.html">Gruppträning</a></li>
+                    <li><a href="priser.html">Priser</a></li>
+                    <li><span class="nav-placeholder">Om gymmet</span></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Kontaktformulär -->
+        <section>
+            <h1>Kontakt</h1>
+            <form action="#confirmation">
+                <label for="namn">Namn</label>
+                <input id="namn" name="namn" type="text">
+
+                <label for="epost">E-post</label>
+                <input id="epost" name="epost" type="email">
+
+                <label for="meddelande">Meddelande</label>
+                <textarea id="meddelande" name="meddelande"></textarea>
+
+                <button type="submit">Skicka</button>
+            </form>
+            <p id="confirmation">Tack, vi återkommer inom 24 timmar.</p>
+        </section>
+
+        <section>
+            <h2>Adress och öppettider</h2>
+            <p>Adress: Exempelgatan 1, 123 45 Exempelstad</p>
+            <p>Öppet 05:00–23:00 alla dagar</p>
+        </section>
+    </main>
+
+    <!-- Sidfot -->
+    <footer>
+        <p>WebGym</p>
+    </footer>
+</body>
+</html>
