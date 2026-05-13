@@ -3,38 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGym - Om gymmet</title>
+    <meta name="description" content="Läs om Styrka Gym, våra lokaler, värderingar och personal.">
+    <title>Styrka Gym | Om gymmet</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Sidhuvud med navigation -->
-    <header>
+<body class="page-about">
+    <a class="skip-link" href="#main-content">Hoppa till innehållet</a>
+
+    <!-- Huvudnavigation -->
+    <header class="site-header-wrapper">
         <div class="site-header">
-            <a class="site-title" href="index.html">WebGym</a>
+            <a class="site-title" href="index.html">Styrka Gym</a>
             <nav aria-label="Huvudnavigation">
                 <ul>
-                    <li><a href="traning-och-utbud.html">Träning och utbud</a></li>
+                    <li><a href="index.html">Startsida</a></li>
+                    <li><a href="traning-och-utbud.html">Träning &amp; utbud</a></li>
                     <li><a href="grupptraning.html">Gruppträning</a></li>
+                    <li><a href="schema.html">Schema</a></li>
                     <li><a href="priser.html">Priser</a></li>
-                    <li><a href="om-gymmet.html">Om gymmet</a></li>
+                    <li><a aria-current="page" href="om-gymmet.html">Om gymmet</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Enkel platshållartext för om-sidan -->
-        <section>
-            <h1>Om gymmet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <main id="main-content">
+        <!-- Om-sidan bygger förtroende med lokaler, värderingar och personal -->
+        <section class="page-hero">
+            <p class="eyebrow">Om gymmet</p>
+            <h1>Ett gym som vill göra träning mer tillgänglig.</h1>
+            <p class="lead">
+                Styrka Gym startades med idén att träning ska vara tydlig, välkomnande och möjlig att hålla i över tid.
+                Därför har vi byggt en lugn miljö där det känns naturligt att fråga, testa och utvecklas i sin egen takt.
+            </p>
+        </section>
+
+        <section class="split-layout content-section">
+            <div>
+                <p class="eyebrow">Lokalerna</p>
+                <h2>Öppna ytor, tydlig planering och bra flöde</h2>
+                <p>Gymmet är uppdelat i en maskindel, en fri-viktszon, en funktionell yta och två salar för gruppträning.</p>
+                <p>Vi har valt en planlösning där det är lätt att hitta rätt utan att miljön känns stressig eller trång.</p>
+            </div>
+            <aside class="panel">
+                <p class="panel-label">I lokalerna finns</p>
+                <ul class="check-list">
+                    <li>Fria vikter och styrkemaskiner</li>
+                    <li>Konditionsdel med löpband och cyklar</li>
+                    <li>Två salar för gruppträning</li>
+                    <li>Omklädningsrum och låsbara skåp</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="value-grid">
+            <article class="feature-card static-card">
+                <span class="feature-kicker">Tryggt</span>
+                <h2>Vi möter dig där du är</h2>
+                <p>Det ska kännas okej att vara ny, osäker eller vilja börja lugnt. Personal finns nära till hands när du behöver hjälp.</p>
+            </article>
+            <article class="feature-card static-card">
+                <span class="feature-kicker">Tydligt</span>
+                <h2>Lätt att förstå</h2>
+                <p>Scheman, medlemskap och träningsytor är presenterade så att det ska vara enkelt att hitta rätt utan onödigt krångel.</p>
+            </article>
+            <article class="feature-card static-card">
+                <span class="feature-kicker">Tillgängligt</span>
+                <h2>För olika nivåer</h2>
+                <p>Vi erbjuder både gymträning, gruppträning och personlig träning så att fler kan hitta en träningsform som fungerar.</p>
+            </article>
+        </section>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <p class="eyebrow">Möt teamet</p>
+                <h2>Personal som hjälper dig vidare</h2>
+            </div>
+            <div class="staff-grid">
+                <article class="staff-card">
+                    <div class="staff-badge" aria-hidden="true">AL</div>
+                    <h3>Anna Lind</h3>
+                    <p class="staff-role">Gymansvarig</p>
+                    <p>Anna hjälper nya medlemmar att komma igång och ansvarar för introduktioner i gymmet.</p>
+                </article>
+                <article class="staff-card">
+                    <div class="staff-badge" aria-hidden="true">ME</div>
+                    <h3>Mikael Ek</h3>
+                    <p class="staff-role">Personlig tränare</p>
+                    <p>Mikael fokuserar på styrka, teknik och träningsupplägg för dig som vill träna mer strukturerat.</p>
+                </article>
+                <article class="staff-card">
+                    <div class="staff-badge" aria-hidden="true">SH</div>
+                    <h3>Sara Holm</h3>
+                    <p class="staff-role">Gruppträningsinstruktör</p>
+                    <p>Sara leder flera av våra pass och hjälper dig att hitta rätt nivå i gruppträningen.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div>
+                <p class="eyebrow">Besök oss</p>
+                <h2>Vill du se lokalerna med egna ögon?</h2>
+            </div>
+            <div class="button-row">
+                <a class="button-link" href="kontakt.html">Boka provträning</a>
+                <a class="button-secondary" href="schema.html">Se schema</a>
+            </div>
         </section>
     </main>
 
     <!-- Sidfot -->
-    <footer>
-        <p>WebGym</p>
+    <footer class="site-footer">
+        <div class="footer-layout">
+            <div>
+                <p class="footer-title">Styrka Gym</p>
+                <p>Modern träning för alla nivåer med fokus på tydlighet, trygghet och träningsglädje.</p>
+            </div>
+            <div>
+                <p class="footer-heading">Snabblänkar</p>
+                <ul class="footer-links">
+                    <li><a href="schema.html">Schema</a></li>
+                    <li><a href="priser.html">Priser</a></li>
+                    <li><a href="kontakt.html">Provträning</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-heading">Kontakt</p>
+                <p>Storgatan 12, 972 38 Luleå</p>
+                <p>0920-55 10 40</p>
+                <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

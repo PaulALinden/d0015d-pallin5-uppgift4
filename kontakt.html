@@ -3,55 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGym - Kontakt</title>
+    <meta name="description" content="Kontakta Styrka Gym eller boka en kostnadsfri provträning.">
+    <title>Styrka Gym | Kontakt &amp; provträning</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Sidhuvud med navigation -->
-    <header>
+<body class="page-contact">
+    <a class="skip-link" href="#main-content">Hoppa till innehållet</a>
+
+    <!-- Huvudnavigation -->
+    <header class="site-header-wrapper">
         <div class="site-header">
-            <a class="site-title" href="index.html">WebGym</a>
+            <a class="site-title" href="index.html">Styrka Gym</a>
             <nav aria-label="Huvudnavigation">
                 <ul>
-                    <li><a href="traning-och-utbud.html">Träning och utbud</a></li>
+                    <li><a href="index.html">Startsida</a></li>
+                    <li><a href="traning-och-utbud.html">Träning &amp; utbud</a></li>
                     <li><a href="grupptraning.html">Gruppträning</a></li>
+                    <li><a href="schema.html">Schema</a></li>
                     <li><a href="priser.html">Priser</a></li>
                     <li><a href="om-gymmet.html">Om gymmet</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a aria-current="page" href="kontakt.html">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Kontaktformulär -->
-        <section>
-            <h1>Kontakt</h1>
-            <form action="#confirmation">
-                <label for="namn">Namn</label>
-                <input id="namn" name="namn" type="text">
-
-                <label for="epost">E-post</label>
-                <input id="epost" name="epost" type="email">
-
-                <label for="meddelande">Meddelande</label>
-                <textarea id="meddelande" name="meddelande"></textarea>
-
-                <button type="submit">Skicka</button>
-            </form>
-            <p id="confirmation">Tack, vi återkommer inom 24 timmar.</p>
+    <main id="main-content">
+        <!-- Kontaktsidan avslutar flödet med fråga eller bokning -->
+        <section class="page-hero">
+            <p class="eyebrow">Kontakt &amp; provträning</p>
+            <h1>Hör av dig om du vill fråga något eller boka ett första besök.</h1>
+            <p class="lead">
+                Använd formuläret för att boka provträning, fråga om medlemskap eller få hjälp att välja rätt pass.
+                Vi återkommer normalt inom 24 timmar på vardagar.
+            </p>
         </section>
 
-        <section>
-            <h2>Adress och öppettider</h2>
-            <p>Adress: Exempelgatan 1, 123 45 Exempelstad</p>
-            <p>Öppet 05:00–23:00 alla dagar</p>
+        <section class="contact-layout">
+            <div class="contact-card">
+                <h2>Skicka en förfrågan</h2>
+                <form action="kontakt.html#confirmation" method="get">
+                    <label for="namn">Namn</label>
+                    <input id="namn" name="namn" type="text" required>
+
+                    <label for="epost">E-post</label>
+                    <input id="epost" name="epost" type="email" required>
+
+                    <label for="telefon">Telefon</label>
+                    <input id="telefon" name="telefon" type="tel">
+
+                    <label for="arende">Ärende</label>
+                    <select id="arende" name="arende" required>
+                        <option value="" selected disabled>Välj ett alternativ</option>
+                        <option value="provtraning">Boka provträning</option>
+                        <option value="medlemskap">Fråga om medlemskap</option>
+                        <option value="grupptraning">Fråga om gruppträning</option>
+                        <option value="ovrigt">Övrig fråga</option>
+                    </select>
+
+                    <label for="onskad-dag">Önskad dag eller tid</label>
+                    <input id="onskad-dag" name="onskad-dag" type="text" placeholder="Till exempel tisdag efter 17:00">
+
+                    <label for="meddelande">Meddelande</label>
+                    <textarea id="meddelande" name="meddelande" required></textarea>
+
+                    <button type="submit">Skicka förfrågan</button>
+                </form>
+                <p id="confirmation" class="status-message" tabindex="-1">Tack! Din förfrågan är skickad och vi återkommer så snart vi kan.</p>
+            </div>
+
+            <aside class="info-stack">
+                <article class="panel">
+                    <p class="panel-label">Kontaktuppgifter</p>
+                    <p>Storgatan 12, 972 38 Luleå</p>
+                    <p>0920-55 10 40</p>
+                    <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
+                </article>
+                <article class="panel">
+                    <p class="panel-label">Öppettider</p>
+                    <p>Gymmet är öppet 05:00-23:00 alla dagar.</p>
+                    <p>Receptionen är bemannad måndag till torsdag 16:00-19:00.</p>
+                </article>
+                <article class="panel">
+                    <p class="panel-label">Så går en provträning till</p>
+                    <ol class="step-list">
+                        <li>Du skickar en bokningsförfrågan.</li>
+                        <li>Vi bekräftar en tid som passar.</li>
+                        <li>Du får en kort rundtur och kan testa gymmet eller ett pass.</li>
+                    </ol>
+                </article>
+            </aside>
         </section>
     </main>
 
     <!-- Sidfot -->
-    <footer>
-        <p>WebGym</p>
+    <footer class="site-footer">
+        <div class="footer-layout">
+            <div>
+                <p class="footer-title">Styrka Gym</p>
+                <p>Modern träning för alla nivåer med fokus på tydlighet, trygghet och träningsglädje.</p>
+            </div>
+            <div>
+                <p class="footer-heading">Snabblänkar</p>
+                <ul class="footer-links">
+                    <li><a href="schema.html">Schema</a></li>
+                    <li><a href="priser.html">Priser</a></li>
+                    <li><a href="kontakt.html">Provträning</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-heading">Kontakt</p>
+                <p>Storgatan 12, 972 38 Luleå</p>
+                <p>0920-55 10 40</p>
+                <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

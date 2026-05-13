@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGym - Gruppträning</title>
+    <meta name="description" content="Se vilka gruppträningspass som finns på Styrka Gym och hur bokningen fungerar.">
+    <title>Styrka Gym | Gruppträning</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Sidhuvud med navigation -->
-    <header>
+<body class="page-group">
+    <a class="skip-link" href="#main-content">Hoppa till innehållet</a>
+
+    <!-- Huvudnavigation -->
+    <header class="site-header-wrapper">
         <div class="site-header">
-            <a class="site-title" href="index.html">WebGym</a>
+            <a class="site-title" href="index.html">Styrka Gym</a>
             <nav aria-label="Huvudnavigation">
                 <ul>
-                    <li><a href="traning-och-utbud.html">Träning och utbud</a></li>
-                    <li><a href="grupptraning.html">Gruppträning</a></li>
+                    <li><a href="index.html">Startsida</a></li>
+                    <li><a href="traning-och-utbud.html">Träning &amp; utbud</a></li>
+                    <li><a aria-current="page" href="grupptraning.html">Gruppträning</a></li>
+                    <li><a href="schema.html">Schema</a></li>
                     <li><a href="priser.html">Priser</a></li>
                     <li><a href="om-gymmet.html">Om gymmet</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
@@ -23,22 +28,96 @@
         </div>
     </header>
 
-    <main>
-        <!-- Innehåll för gruppträning -->
-        <section>
-            <h1>Gruppträning</h1>
-            <ul>
-                <li>HIIT – 45 min, hög intensitet</li>
-                <li>Yoga – 60 min, rörlighet och återhämtning</li>
-                <li>Core – 30 min, bålstyrka</li>
-            </ul>
-            <a class="button-link" href="schema.html">Se schema</a>
+    <main id="main-content">
+        <!-- Passutbudet presenteras tydligt och inspirerande -->
+        <section class="page-hero">
+            <p class="eyebrow">Gruppträning</p>
+            <h1>Pass som ger energi, struktur och variation i veckan.</h1>
+            <p class="lead">
+                Gruppträningen är till för både dig som vill hitta motivation tillsammans med andra
+                och dig som vill komplettera gymträningen med puls, rörlighet eller teknik.
+            </p>
+        </section>
+
+        <section class="class-grid">
+            <article class="class-card">
+                <span class="feature-kicker">45 min</span>
+                <h2>HIIT</h2>
+                <p>Ett intensivt intervallpass med fokus på kondition, styrka och hög puls.</p>
+                <p><strong>Nivå:</strong> Medel till hög</p>
+            </article>
+            <article class="class-card">
+                <span class="feature-kicker">50 min</span>
+                <h2>Styrka Bas</h2>
+                <p>Teknik och styrka i ett lugnare tempo med tydliga instruktioner och enkla upplägg.</p>
+                <p><strong>Nivå:</strong> Nybörjare till medel</p>
+            </article>
+            <article class="class-card">
+                <span class="feature-kicker">60 min</span>
+                <h2>Yoga Flow</h2>
+                <p>Ett pass för rörlighet, balans och återhämtning som passar bra mellan styrkepassen.</p>
+                <p><strong>Nivå:</strong> Alla nivåer</p>
+            </article>
+            <article class="class-card">
+                <span class="feature-kicker">30 min</span>
+                <h2>Core Express</h2>
+                <p>Kort och effektiv träning för bålstabilitet, hållning och kontroll.</p>
+                <p><strong>Nivå:</strong> Alla nivåer</p>
+            </article>
+        </section>
+
+        <section class="split-layout content-section">
+            <div>
+                <p class="eyebrow">Så fungerar det</p>
+                <h2>Enkelt att boka och lätt att komma igång</h2>
+                <ol class="step-list">
+                    <li>Välj ett pass i schemat som passar din nivå och tid.</li>
+                    <li>Boka din plats i receptionen eller via kontakt med personalen.</li>
+                    <li>Kom gärna 10 minuter före start om det är ditt första pass.</li>
+                    <li>Prata med instruktören om du behöver anpassningar eller alternativ.</li>
+                </ol>
+            </div>
+            <aside class="panel">
+                <p class="panel-label">Tips för första passet</p>
+                <p>Om du är ny rekommenderar vi Styrka Bas eller Yoga Flow som första gruppass. Där får du ett lugnare tempo och tydliga instruktioner.</p>
+                <a class="text-link" href="schema.html">Gå vidare till veckoschemat</a>
+            </aside>
+        </section>
+
+        <section class="cta-banner">
+            <div>
+                <p class="eyebrow">Redo att testa?</p>
+                <h2>Se tiderna eller boka en provträning med oss.</h2>
+            </div>
+            <div class="button-row">
+                <a class="button-link" href="schema.html">Se schema</a>
+                <a class="button-secondary" href="kontakt.html">Boka provträning</a>
+            </div>
         </section>
     </main>
 
     <!-- Sidfot -->
-    <footer>
-        <p>WebGym</p>
+    <footer class="site-footer">
+        <div class="footer-layout">
+            <div>
+                <p class="footer-title">Styrka Gym</p>
+                <p>Modern träning för alla nivåer med fokus på tydlighet, trygghet och träningsglädje.</p>
+            </div>
+            <div>
+                <p class="footer-heading">Snabblänkar</p>
+                <ul class="footer-links">
+                    <li><a href="schema.html">Schema</a></li>
+                    <li><a href="priser.html">Priser</a></li>
+                    <li><a href="kontakt.html">Provträning</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-heading">Kontakt</p>
+                <p>Storgatan 12, 972 38 Luleå</p>
+                <p>0920-55 10 40</p>
+                <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
