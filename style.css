@@ -88,6 +88,19 @@ textarea:focus-visible {
     border-bottom: 1px solid rgba(23, 50, 69, 0.08);
 }
 
+.utility-bar {
+    border-bottom: 1px solid rgba(23, 50, 69, 0.08);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.utility-bar-inner {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.45rem 0;
+}
+
 .site-header,
 main,
 .footer-layout {
@@ -139,6 +152,23 @@ nav a[aria-current="page"] {
 }
 
 nav a[aria-current="page"] {
+    color: var(--secondary);
+}
+
+.help-nav ul {
+    justify-content: flex-end;
+}
+
+.help-nav a {
+    padding: 0.28rem 0.65rem;
+    color: var(--muted);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.help-nav a:hover,
+.help-nav a[aria-current="page"] {
+    background-color: rgba(23, 50, 69, 0.06);
     color: var(--secondary);
 }
 
@@ -715,7 +745,8 @@ textarea {
 
     .site-header,
     main,
-    .footer-layout {
+    .footer-layout,
+    .utility-bar-inner {
         width: min(100% - 1.25rem, 1120px);
     }
 
@@ -752,6 +783,15 @@ textarea {
     nav a {
         padding: 0.45rem 0.75rem;
         font-size: 0.9rem;
+    }
+
+    .utility-bar-inner {
+        justify-content: flex-start;
+    }
+
+    .help-nav a {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.82rem;
     }
 
     .button-row {
