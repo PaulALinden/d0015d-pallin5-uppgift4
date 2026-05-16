@@ -82,6 +82,18 @@ textarea:focus-visible {
     top: 1rem;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .site-header-wrapper {
     position: sticky;
     top: 0;
@@ -177,6 +189,8 @@ nav a[aria-current="page"] {
 
 main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 2.5rem 0 4rem;
 }
 
@@ -246,7 +260,7 @@ button {
 }
 
 .hero,
-.page-hero,
+.,
 .cta-banner,
 .panel,
 .feature-card,
@@ -261,8 +275,6 @@ button {
 }
 
 .hero {
-    display: grid;
-    grid-template-columns: minmax(300px, 0.95fr) minmax(0, 1.3fr);
     gap: 1.5rem;
     align-items: stretch;
     padding: 2.25rem;
@@ -279,16 +291,14 @@ button {
     content: "";
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(
-        125deg,
-        rgba(255, 255, 255, 0.08) 0 12px,
-        transparent 12px 30px
-    );
+    background: repeating-linear-gradient(125deg,
+            rgba(255, 255, 255, 0.08) 0 12px,
+            transparent 12px 30px);
     opacity: 0.4;
     pointer-events: none;
 }
 
-.hero > * {
+.hero>* {
     position: relative;
     z-index: 1;
 }
@@ -322,7 +332,6 @@ button {
 }
 
 .hero-list {
-    display: grid;
     gap: 0.75rem;
     margin: 1.5rem 0 0;
     padding: 0;
@@ -356,6 +365,7 @@ button {
 
 .hero-panel img {
     width: 100%;
+    max-width: 500px;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border: 3px solid rgba(255, 255, 255, 0.18);
@@ -371,7 +381,6 @@ button {
 }
 
 .detail-list {
-    display: grid;
     gap: 1rem;
     margin: 0;
 }
@@ -396,7 +405,7 @@ button {
     color: rgba(255, 255, 255, 0.9);
 }
 
-.page-hero,
+.,
 .cta-banner {
     padding: 2rem;
     border: 1px solid var(--border);
@@ -405,17 +414,17 @@ button {
         linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(242, 235, 226, 0.92));
 }
 
-.page-hero {
+.cta-banner {
     position: relative;
     overflow: hidden;
 }
 
-.page-hero > * {
+.cta-banner>* {
     position: relative;
     z-index: 1;
 }
 
-.page-hero::after {
+.cta-banner::after {
     content: "";
     position: absolute;
     inset: auto -3rem -4rem auto;
@@ -490,9 +499,9 @@ button:hover,
     align-self: flex-start;
     margin-top: 0.8rem;
     padding: 0.75rem 1rem;
-    border-left: 4px solid var(--primary);
     background-color: rgba(255, 255, 255, 0.12);
     color: #ffffff;
+    background-color: #696969;
     font-weight: 800;
     letter-spacing: 0.04em;
 }
@@ -512,29 +521,36 @@ button:hover,
 
 .feature-grid,
 .service-grid,
-.class-grid,
 .value-grid,
 .staff-grid,
-.stat-grid,
 .price-grid {
-    display: grid;
     gap: 1.25rem;
 }
 
-.feature-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+.class-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .feature-card,
 .service-card,
 .class-card,
-.stat-card,
 .staff-card,
 .contact-card {
     padding: 1.5rem;
     border: 1px solid var(--border);
     border-radius: var(--radius-medium);
     background-color: var(--surface);
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+    background-color: var(--surface);
+    margin-bottom: 1.5rem;
 }
 
 .feature-card {
@@ -560,21 +576,7 @@ button:hover,
     background-color: var(--surface-strong);
 }
 
-.stat-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.stat-card strong {
-    display: block;
-    margin-bottom: 0.75rem;
-    color: var(--secondary);
-    font-size: 1.8rem;
-    line-height: 1;
-}
-
 .split-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.9fr);
     gap: 1.5rem;
     align-items: start;
 }
@@ -592,16 +594,9 @@ button:hover,
     margin-bottom: 0.55rem;
 }
 
-.service-grid,
-.class-grid,
-.value-grid,
-.staff-grid,
-.price-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .service-card img {
     width: 100%;
+    height: 280px;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     margin-bottom: 1rem;
@@ -617,14 +612,11 @@ button:hover,
 
 .schedule-layout,
 .contact-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.85fr);
     gap: 1.5rem;
     align-items: start;
 }
 
 .info-stack {
-    display: grid;
     gap: 1rem;
 }
 
@@ -669,6 +661,14 @@ tbody tr:nth-child(even) {
     border: 1px solid var(--border);
     border-radius: var(--radius-medium);
     background-color: var(--surface);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.price-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
 }
 
 .price-card h2 {
@@ -682,8 +682,46 @@ tbody tr:nth-child(even) {
         linear-gradient(180deg, rgba(196, 90, 48, 0.08), rgba(255, 255, 255, 0.96));
 }
 
-.staff-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+.price-card.featured:hover {
+    border-color: rgba(196, 90, 48, 0.8);
+}
+
+.price-subtitle {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0.25rem 0 1rem 0;
+    font-weight: 500;
+}
+
+.price-info {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.price-terms {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.price-section {
+    padding: 2rem 1rem;
+}
+
+.price-section h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.price-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
 }
 
 .staff-badge {
@@ -705,7 +743,6 @@ tbody tr:nth-child(even) {
 }
 
 form {
-    display: grid;
     gap: 0.45rem;
 }
 
@@ -753,8 +790,6 @@ textarea {
 }
 
 .footer-layout {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
     gap: 1.5rem;
 }
 
@@ -781,50 +816,6 @@ textarea {
     color: #d7f4fb;
 }
 
-.page-training .page-hero {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(219, 232, 239, 0.88));
-}
-
-.page-group .page-hero {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(250, 231, 221, 0.9));
-}
-
-.page-schedule .page-hero {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(242, 235, 226, 0.96));
-}
-
-.page-prices .page-hero {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 241, 232, 0.92));
-}
-
-.page-about .page-hero {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(228, 239, 234, 0.92));
-}
-
-.page-contact .page-hero {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(232, 239, 245, 0.92));
-}
-
-@media (max-width: 980px) {
-    .hero,
-    .split-layout,
-    .schedule-layout,
-    .contact-layout,
-    .footer-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .feature-grid,
-    .service-grid,
-    .class-grid,
-    .value-grid,
-    .staff-grid,
-    .price-grid,
-    .stat-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
 @media (max-width: 680px) {
     body {
         background:
@@ -840,7 +831,6 @@ textarea {
     }
 
     .hero,
-    .page-hero,
     .cta-banner,
     .section-highlight,
     .feature-card,
@@ -850,19 +840,8 @@ textarea {
     .staff-card,
     .contact-card,
     .panel,
-    .table-wrap,
-    .stat-card {
+    .table-wrap {
         padding: 1.25rem;
-    }
-
-    .feature-grid,
-    .service-grid,
-    .class-grid,
-    .value-grid,
-    .staff-grid,
-    .price-grid,
-    .stat-grid {
-        grid-template-columns: 1fr;
     }
 
     nav ul {

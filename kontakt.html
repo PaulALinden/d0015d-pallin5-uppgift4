@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Styrka Gym | Kontakt &amp; provträning</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="page-contact">
     <a class="skip-link" href="#main-content">Hoppa till innehållet</a>
 
@@ -38,7 +40,7 @@
 
     <main id="main-content">
         <!-- Kontaktsidan avslutar flödet med fråga eller bokning -->
-        <section class="page-hero">
+        <section class="">
             <p class="eyebrow">Kontakt &amp; provträning</p>
             <h1>Hör av dig om du vill fråga något eller boka ett första besök.</h1>
             <p class="lead">
@@ -47,8 +49,8 @@
             </p>
         </section>
 
-        <section class="contact-layout">
-            <div class="contact-card">
+        <section class="">
+            <div class="card">
                 <h2>Skicka en förfrågan</h2>
                 <form action="kontakt.html#confirmation" method="get">
                     <label for="namn">Namn</label>
@@ -77,30 +79,21 @@
 
                     <button type="submit">Skicka förfrågan</button>
                 </form>
-                <p id="confirmation" class="status-message" tabindex="-1">Tack! Din förfrågan är skickad och vi återkommer så snart vi kan.</p>
+                <p id="confirmation" class="status-message" tabindex="-1">Tack! Din förfrågan är skickad och vi
+                    återkommer så snart vi kan.</p>
             </div>
 
-            <aside class="info-stack">
-                <article class="panel">
-                    <p class="panel-label">Kontaktuppgifter</p>
-                    <p>Storgatan 12, 972 38 Luleå</p>
-                    <p>0920-55 10 40</p>
-                    <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
-                </article>
-                <article class="panel" id="oppettider">
-                    <p class="panel-label">Öppettider</p>
-                    <p>Gymmet är öppet 05:00-23:00 alla dagar.</p>
-                    <p>Receptionen är bemannad måndag till torsdag 16:00-19:00.</p>
-                </article>
-                <article class="panel">
-                    <p class="panel-label">Så går en provträning till</p>
-                    <ol class="step-list">
-                        <li>Du skickar en bokningsförfrågan.</li>
-                        <li>Vi bekräftar en tid som passar.</li>
-                        <li>Du får en kort rundtur och kan testa gymmet eller ett pass.</li>
-                    </ol>
-                </article>
-            </aside>
+            <article class="card">
+                <p class="panel-label">Kontaktuppgifter</p>
+                <p>Storgatan 12, 972 38 Luleå</p>
+                <p>0920-55 10 40</p>
+                <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
+            </article>
+            <article class="card" id="oppettider">
+                <p class="panel-label">Öppettider</p>
+                <p>Gymmet är öppet 05:00-23:00 alla dagar.</p>
+                <p>Receptionen är bemannad måndag till torsdag 16:00-19:00.</p>
+            </article>
         </section>
     </main>
 
@@ -128,4 +121,5 @@
         </div>
     </footer>
 </body>
+
 </html>
