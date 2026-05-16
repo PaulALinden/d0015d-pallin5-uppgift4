@@ -233,7 +233,6 @@ button {
     font-size: 1rem;
 }
 
-.eyebrow,
 .panel-label,
 .feature-kicker,
 .price-label {
@@ -287,17 +286,6 @@ button {
     position: relative;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(125deg,
-            rgba(255, 255, 255, 0.08) 0 12px,
-            transparent 12px 30px);
-    opacity: 0.4;
-    pointer-events: none;
-}
-
 .hero>* {
     position: relative;
     z-index: 1;
@@ -327,10 +315,6 @@ button {
     gap: 0.35rem;
 }
 
-.hero-home .eyebrow {
-    color: #b9eef9;
-}
-
 .hero-list {
     gap: 0.75rem;
     margin: 1.5rem 0 0;
@@ -343,16 +327,14 @@ button {
     padding-left: 1.25rem;
 }
 
-.hero-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.65rem;
-    width: 0.45rem;
-    height: 0.45rem;
-    border-radius: 50%;
-    background-color: #ffd3c2;
+.row-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: stretch;
+    justify-content: space-between;
 }
+
 
 .hero-panel {
     display: flex;
@@ -405,7 +387,6 @@ button {
     color: rgba(255, 255, 255, 0.9);
 }
 
-.,
 .cta-banner {
     padding: 2rem;
     border: 1px solid var(--border);
@@ -551,6 +532,11 @@ button:hover,
     border-radius: var(--radius-medium);
     background-color: var(--surface);
     margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 300px;
+    min-width: 260px;
 }
 
 .feature-card {
@@ -663,6 +649,11 @@ tbody tr:nth-child(even) {
     background-color: var(--surface);
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 300px;
+    min-width: 260px;
 }
 
 .price-card:hover {
