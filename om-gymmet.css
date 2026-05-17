@@ -1,0 +1,4 @@
+.page-about main {
+    gap: 3rem;
+    justify-content: flex-start;
+}
