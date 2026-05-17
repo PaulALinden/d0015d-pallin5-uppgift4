@@ -282,6 +282,13 @@ nav a[aria-current="page"] {
     flex: 1;
 }
 
+.card img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: var(--radius-small);
+}
+
 .section-center {
     display: flex;
     flex-direction: column;
