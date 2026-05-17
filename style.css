@@ -264,6 +264,176 @@ nav a[aria-current="page"] {
 .card-row {
     display: flex;
     gap: 1.5rem;
+    width: 100%;
+}
+
+.card-row > article {
+    flex: 1;
+}
+
+.page-intro {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.page-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.page-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.page-section ul li::before {
+    content: "✓  ";
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.card > span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+}
+
+.card > [aria-hidden="true"] {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--secondary-soft);
+    color: var(--primary-dark);
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-about main,
+.page-schedule main,
+.page-contact main {
+    gap: 3rem;
+    justify-content: flex-start;
+}
+
+.page-contact .page-intro {
+    max-width: 35rem;
+}
+
+/* Tabell */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9375rem;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: var(--bg-soft);
+}
+
+/* Kort — första p som etikett */
+.card > p:first-child {
+    font-weight: 700;
+    color: var(--text);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    max-width: 35rem;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text);
+    background-color: var(--surface);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+    border-color: var(--primary);
+}
+
+textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+}
+
+#confirmation {
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 0.5rem;
 }
 
 .card {

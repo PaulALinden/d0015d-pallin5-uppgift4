@@ -37,9 +37,9 @@
     </header>
 
     <main>
+        <!-- Kontaktsidan avslutar flödet med fråga eller bokning -->
         <section class="section-center">
-            <!-- Kontaktsidan avslutar flödet med fråga eller bokning -->
-            <section>
+            <section class="page-intro">
                 <h1>Kontakt &amp; provträning</h1>
                 <h2>Hör av dig om du vill fråga något eller boka ett första besök.</h2>
                 <p>
@@ -49,52 +49,51 @@
             </section>
 
             <section>
-                <div sec>
-                    <h2>Skicka en förfrågan</h2>
-                    <form action="kontakt.html#confirmation" method="get">
-                        <label for="namn">Namn</label>
-                        <input id="namn" name="namn" type="text" required>
+                <h2>Skicka en förfrågan</h2>
+                <form action="kontakt.html#confirmation" method="get">
+                    <label for="namn">Namn</label>
+                    <input id="namn" name="namn" type="text" required>
 
-                        <label for="epost">E-post</label>
-                        <input id="epost" name="epost" type="email" required>
+                    <label for="epost">E-post</label>
+                    <input id="epost" name="epost" type="email" required>
 
-                        <label for="telefon">Telefon</label>
-                        <input id="telefon" name="telefon" type="tel">
+                    <label for="telefon">Telefon</label>
+                    <input id="telefon" name="telefon" type="tel">
 
-                        <label for="arende">Ärende</label>
-                        <select id="arende" name="arende" required>
-                            <option value="" selected disabled>Välj ett alternativ</option>
-                            <option value="provtraning">Boka provträning</option>
-                            <option value="medlemskap">Fråga om medlemskap</option>
-                            <option value="grupptraning">Fråga om gruppträning</option>
-                            <option value="ovrigt">Övrig fråga</option>
-                        </select>
+                    <label for="arende">Ärende</label>
+                    <select id="arende" name="arende" required>
+                        <option value="" selected disabled>Välj ett alternativ</option>
+                        <option value="provtraning">Boka provträning</option>
+                        <option value="medlemskap">Fråga om medlemskap</option>
+                        <option value="grupptraning">Fråga om gruppträning</option>
+                        <option value="ovrigt">Övrig fråga</option>
+                    </select>
 
-                        <label for="onskad-dag">Önskad dag eller tid</label>
-                        <input id="onskad-dag" name="onskad-dag" type="text"
-                            placeholder="Till exempel tisdag efter 17:00">
+                    <label for="onskad-dag">Önskad dag eller tid</label>
+                    <input id="onskad-dag" name="onskad-dag" type="text"
+                        placeholder="Till exempel tisdag efter 17:00">
 
-                        <label for="meddelande">Meddelande</label>
-                        <textarea id="meddelande" name="meddelande" required></textarea>
+                    <label for="meddelande">Meddelande</label>
+                    <textarea id="meddelande" name="meddelande" required></textarea>
 
-                        <button type="submit">Skicka förfrågan</button>
-                    </form>
-                    <p id="confirmation" tabindex="-1">Tack! Din förfrågan är skickad och vi
-                        återkommer så snart vi kan.</p>
-                </div>
-
-                <article>
-                    <p>Kontaktuppgifter</p>
-                    <p>Storgatan 12, 972 38 Luleå</p>
-                    <p>0920-55 10 40</p>
-                    <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
-                </article>
-                <article>
-                    <p>Öppettider</p>
-                    <p>Gymmet är öppet 05:00-23:00 alla dagar.</p>
-                    <p>Receptionen är bemannad måndag till torsdag 16:00-19:00.</p>
-                </article>
+                    <button type="submit">Skicka förfrågan</button>
+                </form>
+                <p id="confirmation" tabindex="-1">Tack! Din förfrågan är skickad och vi återkommer så snart vi kan.</p>
             </section>
+        </section>
+
+        <section class="card-row">
+            <article>
+                <h2>Kontaktuppgifter</h2>
+                <p>Storgatan 12, 972 38 Luleå</p>
+                <p>0920-55 10 40</p>
+                <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
+            </article>
+            <article id="oppettider">
+                <h2>Öppettider</h2>
+                <p>Gymmet är öppet 05:00–23:00 alla dagar.</p>
+                <p>Receptionen är bemannad måndag till torsdag 16:00–19:00.</p>
+            </article>
         </section>
     </main>
 
