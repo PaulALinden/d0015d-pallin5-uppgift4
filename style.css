@@ -104,7 +104,7 @@ footer p {
     font-size: 0.9rem;
 }
 
-footer div > p:first-child {
+footer div>p:first-child {
     color: #ffffff;
     font-weight: 700;
     font-size: 1rem;
@@ -137,7 +137,7 @@ nav ul {
 }
 
 /* Varumärkeslänk */
-.site-header > a {
+.site-header>a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.375rem;
@@ -146,7 +146,7 @@ nav ul {
     transition: color 0.2s;
 }
 
-.site-header > a:hover {
+.site-header>a:hover {
     color: var(--primary);
 }
 
@@ -213,24 +213,16 @@ nav a[aria-current="page"] {
     flex: 1;
 }
 
-.button-link,
-.button-secondary {
+.button-link {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--primary);
+    color: #ffffff;
     padding: 0.8rem 1.2rem;
     border-radius: 999px;
     border: 1px solid transparent;
     text-decoration: none;
     font-weight: 700;
-}
-
-.button-link {
-    background-color: var(--primary);
-    color: #ffffff;
-}
-
-.button-secondary {
-    background-color: #f4f4f4;
-    color: var(--text);
-    border-color: rgba(0, 0, 0, 0.08);
 }
 
 .card-row {
@@ -248,7 +240,7 @@ nav a[aria-current="page"] {
     width: 100%;
 }
 
-.card > span {
+.card>span {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -256,7 +248,7 @@ nav a[aria-current="page"] {
     color: var(--primary);
 }
 
-.card > [aria-hidden="true"] {
+.card>[aria-hidden="true"] {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -270,7 +262,7 @@ nav a[aria-current="page"] {
 }
 
 /* Kort — första p som etikett */
-.card > p:first-child {
+.card>p:first-child {
     font-weight: 700;
     color: var(--text);
     font-size: 0.875rem;
@@ -298,7 +290,6 @@ nav a[aria-current="page"] {
     gap: 3rem;
 }
 
-.section-center > section > h2 {
+.section-center>section>h2 {
     margin-bottom: 1.75rem;
 }
-
