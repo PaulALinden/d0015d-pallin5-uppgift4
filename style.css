@@ -78,7 +78,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2% 5% 5% 5%;
+    padding: 2% 5% 3rem 5%;
     background-color: var(--bg);
 }
 
@@ -301,7 +301,7 @@ nav a[aria-current="page"] {
 
 @media (max-width: 640px) {
     main {
-        padding: 1rem 4% 4% 4%;
+        padding: 1rem 4% 3rem 4%;
     }
 
     .site-header {
