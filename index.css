@@ -26,3 +26,9 @@
 .hero-copy {
     flex: 1;
 }
+
+@media (max-width: 640px) {
+    .hero {
+        width: 95%;
+    }
+}

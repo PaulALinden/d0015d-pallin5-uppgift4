@@ -78,3 +78,13 @@ button[type="submit"]:hover {
     margin-top: 0.5rem;
     text-align: center;
 }
+
+@media (max-width: 640px) {
+    .page-intro {
+        max-width: 100%;
+    }
+
+    form {
+        max-width: 100%;
+    }
+}

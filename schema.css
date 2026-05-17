@@ -31,3 +31,10 @@ tbody tr:last-child td {
 tbody tr:hover {
     background-color: var(--bg-soft);
 }
+
+@media (max-width: 640px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
