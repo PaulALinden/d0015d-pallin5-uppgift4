@@ -30,6 +30,7 @@ html,
 body {
     height: 100%;
     margin: 0;
+    background-color: var(--menu-gray);
 }
 
 body {
@@ -79,15 +80,53 @@ main {
     justify-content: center;
     align-items: center;
     padding: 2% 5% 5% 5%;
+    background-color: var(--bg);
 }
 
 footer {
     background-color: var(--menu-gray);
-    max-height: 5%;
     width: 100%;
-    padding: 5%;
+    padding: 3rem 5%;
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+footer div > p:first-child {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.25rem;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #ffffff;
 }
 
 nav ul {
