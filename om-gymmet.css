@@ -1,16 +1,16 @@
-.page-about main {
+main {
     gap: 3rem;
     justify-content: flex-start;
 }
 
-.page-about ul {
+main ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.page-about ul li::before {
+main ul li::before {
     content: "✓  ";
     color: var(--primary);
     font-weight: 700;

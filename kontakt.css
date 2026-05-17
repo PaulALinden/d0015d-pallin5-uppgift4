@@ -1,9 +1,9 @@
-.page-contact main {
+main {
     gap: 3rem;
     justify-content: flex-start;
 }
 
-.page-contact .page-intro {
+.page-intro {
     max-width: 35rem;
 }
 
