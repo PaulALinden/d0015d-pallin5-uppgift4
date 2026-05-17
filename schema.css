@@ -3,6 +3,15 @@ main {
     justify-content: flex-start;
 }
 
+/* --- Tabell-sektion: kort-skal --- */
+main > section:nth-child(2) {
+    background-color: var(--surface);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    width: 100%;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -11,14 +20,15 @@ table {
 th {
     background-color: var(--primary);
     color: #ffffff;
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1rem;
     text-align: left;
     font-size: 0.875rem;
     font-weight: 600;
+    letter-spacing: 0.03em;
 }
 
 td {
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1rem;
     border-bottom: 1px solid var(--border);
     color: var(--muted);
     font-size: 0.9375rem;
@@ -28,13 +38,97 @@ tbody tr:last-child td {
     border-bottom: none;
 }
 
-tbody tr:hover {
+tbody tr:nth-child(even) {
     background-color: var(--bg-soft);
 }
 
+tbody tr:hover {
+    background-color: var(--secondary-soft);
+}
+
+/* --- Info-kort --- */
+main > section:nth-child(3) {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+main > section:nth-child(3) article {
+    background-color: var(--surface);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+main > section:nth-child(3) article > p:first-child {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+main > section:nth-child(3) article a {
+    display: inline-block;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-top: auto;
+}
+
+main > section:nth-child(3) article a:hover {
+    color: var(--link-dark);
+    text-decoration: underline;
+}
+
+/* --- Mobil --- */
 @media (max-width: 640px) {
-    table {
-        display: block;
-        overflow-x: auto;
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    td {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        padding: 0.2rem 0;
+        border-bottom: none;
+        font-size: 0.9rem;
+    }
+
+    td::before {
+        font-weight: 700;
+        color: var(--text);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        min-width: 3.5rem;
+        flex-shrink: 0;
+    }
+
+    td:nth-child(1)::before { content: "Dag"; }
+    td:nth-child(2)::before { content: "Tid"; }
+    td:nth-child(3)::before { content: "Pass"; }
+    td:nth-child(4)::before { content: "Nivå"; }
+    td:nth-child(5)::before { content: "Sal"; }
+
+    main > section:nth-child(3) {
+        flex-direction: column;
     }
 }
