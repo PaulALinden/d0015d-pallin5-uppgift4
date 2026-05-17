@@ -15,3 +15,11 @@ main ul li::before {
     color: var(--primary);
     font-weight: 700;
 }
+
+main section img {
+    width: 100%;
+    max-height: 20rem;
+    object-fit: cover;
+    border-radius: var(--radius-medium);
+    margin-top: 1rem;
+}

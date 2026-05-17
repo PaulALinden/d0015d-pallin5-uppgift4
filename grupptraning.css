@@ -17,6 +17,14 @@
     text-align: left;
 }
 
+.pass-list li img {
+    width: 6rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: var(--radius-small);
+    flex-shrink: 0;
+}
+
 .pass-list li h3 {
     min-width: 5rem;
 }
