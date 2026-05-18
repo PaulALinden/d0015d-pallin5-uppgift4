@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <!-- Skip-länk: visas bara vid tangentbordsnavigering. Låter användaren hoppa förbi menyn direkt till innehållet (WCAG 2.4.1). -->
+    <!-- a.skip-link hoppar förbi menyn vid tangentbordsnavigering (WCAG 2.4.1). -->
     <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
-    <!-- Sidhuvud: innehåller logotyp och navigationsmenyer.  -->
+    <!-- header märker upp sidhuvudet semantiskt. -->
     <header>
-        <!-- Hjälpmeny: sekundär navigering med kontakt och öppettider. Placeras alltid synlig högst upp för att besökaren snabbt ska hitta kontaktuppgifter. -->
+        <!-- nav med aria-label="Hjälpmeny" för sekundär navigering. -->
         <div class="utility-bar">
             <div>
                 <nav aria-label="Hjälpmeny">
@@ -26,7 +26,7 @@
                 </nav>
             </div>
         </div>
-        <!-- Logotyp och global meny: logotypen är en länk till startsidan. Primärmenyn är identisk på alla sidor för att besökaren alltid ska kunna navigera vidare. -->
+        <!-- Logotyp som a-länk och nav med aria-label="Global meny". aria-current="page" markerar aktiv sida. -->
         <div class="site-header">
             <a href="index.html">Styrka Gym</a>
             <nav aria-label="Global meny">
@@ -42,11 +42,9 @@
         </div>
     </header>
 
-    <!-- Huvudinnehåll: <main> används för sidans primära innehåll. -->
+    <!-- main märker upp huvudinnehållet. id="main-content" används av skip-länken. -->
     <main id="main-content">
-        <!-- Kontaktformulär: besökaren kan skicka en förfrågan eller boka provträning. Varje fält har ett <label>-element för att koppla texten till fältet, vilket förbättrar tillgängligheten. -->
-        <!-- div används för layoutomslag utan identifierande rubrik. section är reserverat
-             för självständiga innehållsblock med rubrik enligt HTML5-specifikationen. -->
+        <!-- Formulär med label kopplad till varje fält via for/id. -->
         <div class="section-center">
             <div class="page-intro">
                 <h1>Kontakt &amp; provträning</h1>
@@ -90,7 +88,7 @@
             </section>
         </div>
 
-        <!-- Kontaktuppgifter och öppettider: visas direkt under formuläret som ett alternativ för besökare som föredrar att ringa eller maila direkt. -->
+        <!-- Kontaktuppgifter och öppettider i article-element. id="oppettider" används av ankarlänken i menyn. -->
         <div class="card-row">
             <article>
                 <h2>Kontaktuppgifter</h2>
@@ -106,7 +104,7 @@
         </div>
     </main>
 
-    <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. . -->
+    <!-- footer med kontaktinfo och snabblänkar. -->
     <footer>
         <div>
             <h2>Styrka Gym</h2>

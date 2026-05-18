@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <!-- Skip-länk: visas bara vid tangentbordsnavigering. Låter användaren hoppa förbi menyn direkt till innehållet (WCAG 2.4.1). -->
+    <!-- a.skip-link hoppar förbi menyn vid tangentbordsnavigering (WCAG 2.4.1). -->
     <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
-    <!-- Sidhuvud: innehåller logotyp och navigationsmenyer.  -->
+    <!-- header märker upp sidhuvudet semantiskt. -->
     <header>
-        <!-- Hjälpmeny: sekundär navigering med kontakt och öppettider. Placeras alltid synlig högst upp för att besökaren snabbt ska hitta kontaktuppgifter. -->
+        <!-- nav med aria-label="Hjälpmeny" för sekundär navigering. -->
         <div class="utility-bar">
             <div>
                 <nav aria-label="Hjälpmeny">
@@ -25,7 +25,7 @@
                 </nav>
             </div>
         </div>
-        <!-- Logotyp och global meny: logotypen är en länk till startsidan. Primärmenyn är identisk på alla sidor för att besökaren alltid ska kunna navigera vidare. -->
+        <!-- Logotyp som a-länk och nav med aria-label="Global meny". aria-current="page" markerar aktiv sida. -->
         <div class="site-header">
             <a href="index.html">Styrka Gym</a>
             <nav aria-label="Global meny">
@@ -41,32 +41,30 @@
         </div>
     </header>
 
-    <!-- Huvudinnehåll: <main> används för sidans primära innehåll. -->
+    <!-- main märker upp huvudinnehållet. id="main-content" används av skip-länken. -->
     <main id="main-content">
-        <!-- Hero-sektion: presenterar gymmet med bild, rubrik och knappar. Utformad för att ge besökaren en snabb överblick och direkta val att gå vidare. -->
+        <!-- section för hero-blocket med bild, rubrik och knappar. -->
         <section class="hero">
-            <!-- Bakgrundsbild: visar gymmiljön för att ge ett visuellt första intryck av gymmet. -->
-            <!-- div används här istället för section eftersom elementet enbart är ett layoutomslag
-                 för bilden och inte representerar ett självständigt innehållsblock med rubrik. -->
+            <!-- div omsluter hero-bilden. -->
             <div class="hero-img">
                 <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800&auto=format&q=80"
                     alt="Träning på Styrka Gym">
             </div>
 
-            <!-- Rubrik och introduktionstext: presenterar gymmets namn och erbjudande kortfattat. H1 används för sidans huvudrubrik. -->
+            <!-- div för h1 och ingress. -->
             <div class="hero-copy">
                 <h1>Träna smart, bli stark</h1>
                 <p>Styrka Gym är ett lokalt gym med fria vikter, maskiner och gruppträning.</p>
             </div>
 
-            <!-- CTA-knappar: tre direkta knappar för provträning, schema och priser. Placerade centralt för att underlätta besökarens nästa steg. -->
+            <!-- Tre a-element med class button-link. -->
             <div class="button-row">
                 <a class="button-link" href="kontakt.html">Provträning</a>
                 <a class="button-link" href="schema.html">Se schema</a>
                 <a class="button-link" href="priser.html">Se priser</a>
             </div>
 
-            <!-- Öppettider: visas direkt på startsidan för att snabbt svara på en av besökarens vanligaste frågor. -->
+            <!-- Öppettider. -->
             <div class="quick-info">
                 <p>Öppet 05:00–23:00 alla dagar</p>
             </div>
@@ -76,7 +74,7 @@
 
     </main>
 
-    <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. . -->
+    <!-- footer med kontaktinfo och snabblänkar. -->
     <footer>
         <div>
             <h2>Styrka Gym</h2>

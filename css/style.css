@@ -287,9 +287,8 @@ nav a[aria-current="page"] {
     flex: 1;
 }
 
-/* Mörkare blå (#1a7094) används istället för accent-blå (#4bacc6) eftersom
-   vit text på den mörka blå ger 5.6:1 kontrastförhållande (WCAG 1.4.3 kräver 4.5:1).
-   transition på bakgrundsfärg, skalning och skugga ger en mjuk hover- och klickeffekt. */
+/* Mörkare blå används för att vit text ska uppfylla WCAG AA-kravet på kontrast.
+   transition på bakgrundsfärg och skalning ger en mjuk hover- och klickeffekt. */
 .button-link {
     display: inline-block;
     margin-top: 1rem;
@@ -370,7 +369,7 @@ nav a[aria-current="page"] {
 }
 
 /* .card ger varje kort ett vitt ytskikt, avrundat hörn och skugga för att
-   lyfta det visuellt från bakgrunden och signalera att det är klickbart innehåll. */
+   lyfta det visuellt från bakgrunden och skapa tydlig avgränsning mot omgivningen. */
 .card {
     background-color: var(--surface);
     border-radius: var(--radius-medium);

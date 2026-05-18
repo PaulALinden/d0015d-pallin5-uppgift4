@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <!-- Skip-länk: visas bara vid tangentbordsnavigering. Låter användaren hoppa förbi menyn direkt till innehållet (WCAG 2.4.1). -->
+    <!-- a.skip-link hoppar förbi menyn vid tangentbordsnavigering (WCAG 2.4.1). -->
     <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
-    <!-- Sidhuvud: innehåller logotyp och navigationsmenyer.  -->
+    <!-- header märker upp sidhuvudet semantiskt. -->
     <header>
-        <!-- Hjälpmeny: sekundär navigering med kontakt och öppettider. Placeras alltid synlig högst upp för att besökaren snabbt ska hitta kontaktuppgifter. -->
+        <!-- nav med aria-label="Hjälpmeny" för sekundär navigering. -->
         <div class="utility-bar">
             <div>
                 <nav aria-label="Hjälpmeny">
@@ -26,7 +26,7 @@
                 </nav>
             </div>
         </div>
-        <!-- Logotyp och global meny: logotypen är en länk till startsidan. Primärmenyn är identisk på alla sidor för att besökaren alltid ska kunna navigera vidare. -->
+        <!-- Logotyp som a-länk och nav med aria-label="Global meny". aria-current="page" markerar aktiv sida. -->
         <div class="site-header">
             <a href="index.html">Styrka Gym</a>
             <nav aria-label="Global meny">
@@ -42,16 +42,14 @@
         </div>
     </header>
 
-    <!-- Huvudinnehåll: <main> används för sidans primära innehåll. -->
+    <!-- main märker upp huvudinnehållet. id="main-content" används av skip-länken. -->
     <main id="main-content">
-        <!-- Sidorubrik: H1 anger vad sidan handlar om, placeras överst i main. -->
+        <!-- section.page-intro med sidans h1. -->
         <section class="page-intro">
             <h1>Veckoschema</h1>
         </section>
 
-        <!-- Veckoschema: en HTML-tabell används här eftersom det är tabulär data med dag, tid och sal. -->
-        <!-- div används istället för section eftersom blocket saknar identifierande rubrik.
-             Rubriken h1 "Veckoschema" ovanför ger tillräcklig kontext. -->
+        <!-- table för tabulär data. scope="col" kopplar th till rätt kolumn. div ger bakgrund och skugga. -->
         <div>
             <table>
                 <thead>
@@ -117,12 +115,10 @@
             </table>
         </div>
 
-        <!-- Praktisk information: tips om bokning och förstagångsbesök visas i separata artiklar för att hålla informationen strukturerad och lättläst. -->
-        <!-- section används här eftersom blocket har en identifierande h2-rubrik.
-             h3 i varje artikel skapar en korrekt rubrikhierarki: h1 → h2 → h3. -->
+        <!-- Tre article-element med info om bokning och förstagångsbesök. -->
         <section>
             <h2>Inför passet</h2>
-            <!-- div grupperar artiklarna i en rad utan att vara ett eget innehållsblock. -->
+            <!-- div.article-row gör artiklarna till en flexrad. -->
             <div class="article-row">
                 <article>
                     <h3>Praktisk information</h3>
@@ -143,7 +139,7 @@
         </section>
     </main>
 
-    <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. . -->
+    <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. -->
     <footer>
         <div>
             <h2>Styrka Gym</h2>
