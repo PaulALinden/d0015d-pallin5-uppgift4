@@ -44,13 +44,15 @@
     <!-- Huvudinnehåll: <main> används för sidans primära innehåll. -->
     <main id="main-content">
         <!-- Tre tjänstekort: gym, personlig träning och funktionell yta presenteras i en kortrad. Kortlayout används för att göra det enkelt att jämföra och snabbt skanna informationen. -->
-        <section class="section-center">
-            <section>
+        <!-- div används för layoutomslag utan egen rubrik. section reserveras för innehållsblock
+             med identifierande rubrik, vilket är riktlinjen i HTML5-specifikationen. -->
+        <div class="section-center">
+            <div>
                 <h1>Träning och Utbud</h1>
                 <h2>Träning för alla nivåer</h2>
-            </section>
+            </div>
 
-            <section class="card-row">
+            <div class="card-row">
                 <article class="card">
                     <h3>Gym</h3>
                     <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&q=80"
@@ -69,10 +71,10 @@
                     <h3>Funktionell yta</h3>
                     <img src="https://images.unsplash.com/photo-1758875570127-b6ff35e42436?w=800&auto=format&q=80"
                         alt="Öppen yta för funktionell träning med kettlebells">
-                    <p>En öppen yta för rörlighet, cirkeltränings och varierad tränings.</p>
+                    <p>En öppen yta för rörlighet, cirkelträning och varierad träning.</p>
                 </article>
-            </section>
-        </section>
+            </div>
+        </div>
     </main>
 
     <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. . -->

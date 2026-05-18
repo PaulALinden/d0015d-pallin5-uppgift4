@@ -50,7 +50,9 @@
         </section>
 
         <!-- Veckoschema: en HTML-tabell används här eftersom det är tabulär data med dag, tid och sal. -->
-        <section>
+        <!-- div används istället för section eftersom blocket saknar identifierande rubrik.
+             Rubriken h1 "Veckoschema" ovanför ger tillräcklig kontext. -->
+        <div>
             <table>
                 <thead>
                     <tr>
@@ -113,10 +115,13 @@
                     </tr>
                 </tbody>
             </table>
-        </section>
+        </div>
 
         <!-- Praktisk information: tips om bokning och förstagångsbesök visas i separata artiklar för att hålla informationen strukturerad och lättläst. -->
+        <!-- section används här eftersom blocket har en identifierande h2-rubrik.
+             h3 i varje artikel skapar en korrekt rubrikhierarki: h1 → h2 → h3. -->
         <section>
+            <h2>Inför passet</h2>
             <article>
                 <h3>Praktisk information</h3>
                 <p>Kom gärna 10 minuter före passstart. Om du är ny hjälper instruktören dig att hitta rätt

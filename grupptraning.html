@@ -44,10 +44,12 @@
     <!-- Huvudinnehåll -->
     <main id="main-content">
         <!-- Gruppträningspass: varje pass presenteras med bild och beskrivning för att ge besökaren en känsla för innehållet. En länk till schemat placeras på samma sida för att minska antalet klick. -->
-        <section class="section-center">
-            <section>
+        <!-- div används för layoutomslag utan identifierande rubrik. section är reserverat
+             för innehållsblock med tillhörande rubrik enligt HTML5-specifikationen. -->
+        <div class="section-center">
+            <div>
                 <h1>Gruppträning</h1>
-            </section>
+            </div>
 
             <section>
                 <h2>Lista med pass</h2>
@@ -87,7 +89,7 @@
                 <a class="button-link" href="schema.html">Se schema</a>
             </section>
 
-        </section>
+        </div>
     </main>
 
     <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. -->

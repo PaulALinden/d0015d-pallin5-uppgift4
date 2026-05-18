@@ -45,8 +45,10 @@
     <!-- Huvudinnehåll: <main> används för sidans primära innehåll. -->
     <main id="main-content">
         <!-- Kontaktformulär: besökaren kan skicka en förfrågan eller boka provträning. Varje fält har ett <label>-element för att koppla texten till fältet, vilket förbättrar tillgängligheten. -->
-        <section class="section-center">
-            <section class="page-intro">
+        <!-- div används för layoutomslag utan identifierande rubrik. section är reserverat
+             för självständiga innehållsblock med rubrik enligt HTML5-specifikationen. -->
+        <div class="section-center">
+            <div class="page-intro">
                 <h1>Kontakt &amp; provträning</h1>
                 <h2>Hör av dig om du vill fråga något eller boka ett första besök.</h2>
                 <p>
@@ -86,10 +88,10 @@
                 </form>
                 <p id="confirmation" tabindex="-1">Tack! Din förfrågan är skickad och vi återkommer så snart vi kan.</p>
             </section>
-        </section>
+        </div>
 
         <!-- Kontaktuppgifter och öppettider: visas direkt under formuläret som ett alternativ för besökare som föredrar att ringa eller maila direkt. -->
-        <section class="card-row">
+        <div class="card-row">
             <article>
                 <h2>Kontaktuppgifter</h2>
                 <p>Storgatan 12, 972 38 Luleå</p>
@@ -101,7 +103,7 @@
                 <p>Gymmet är öppet 05:00–23:00 alla dagar.</p>
                 <p>Receptionen är bemannad måndag till torsdag 16:00–19:00.</p>
             </article>
-        </section>
+        </div>
     </main>
 
     <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. . -->
