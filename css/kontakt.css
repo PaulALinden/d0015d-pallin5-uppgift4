@@ -5,6 +5,20 @@ main {
     justify-content: flex-start;
 }
 
+/* section-center och section inuti saknar width i globala stilen vilket gör att
+   align-items: center i main krymper dem till innehållets bredd. width: 100% låter
+   dem växa till full bredd inom main-paddingen. */
+.section-center {
+    width: 100%;
+}
+
+.section-center > section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* page-intro begränsas i bredd för att inte bli för bred på stora skärmar,
    vilket gör introduktionstexten lättare att läsa. */
 .page-intro {
