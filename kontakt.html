@@ -57,6 +57,7 @@
 
             <section>
                 <h2>Skicka en förfrågan</h2>
+                <!-- Formulär (form) samlar fältdata och skickar dem med GET-metod till #confirmation-ankaret. -->
                 <form action="kontakt.html#confirmation" method="get">
                     <label for="namn">Namn</label>
                     <input id="namn" name="namn" type="text" required>
@@ -68,6 +69,7 @@
                     <input id="telefon" name="telefon" type="tel">
 
                     <label for="arende">Ärende</label>
+                    <!-- Rullgardinsmeny (select) med option-element för varje ärendetyp. required kräver ett val. -->
                     <select id="arende" name="arende" required>
                         <option value="" selected disabled>Välj ett alternativ</option>
                         <option value="provtraning">Boka provträning</option>
@@ -80,11 +82,12 @@
                     <input id="onskad-dag" name="onskad-dag" type="text" placeholder="Till exempel tisdag efter 17:00">
 
                     <label for="meddelande">Meddelande</label>
+                    <!-- Flerlradigt textfält (textarea) för fritext. -->
                     <textarea id="meddelande" name="meddelande" required></textarea>
 
+                    <!-- Submitknapp (button type="submit") skickar formuläret när det valideras. -->
                     <button type="submit">Skicka förfrågan</button>
                 </form>
-                <p id="confirmation" tabindex="-1">Tack! Din förfrågan är skickad och vi återkommer så snart vi kan.</p>
             </section>
         </div>
 
