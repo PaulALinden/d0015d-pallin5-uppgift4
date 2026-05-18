@@ -12,6 +12,9 @@
     --border: #bdbdbd;
     --primary: #4bacc6;
     --primary-dark: #2d8ea7;
+    --button-bg: #1a7094;
+    --button-hover: #155d7a;
+    --button-active: #0f4a61;
     --secondary: #111111;
     --secondary-soft: #d8eef4;
     --menu-gray: #505050;
@@ -275,18 +278,33 @@ nav a[aria-current="page"] {
     flex: 1;
 }
 
-/* Mörk text på ljusblå bakgrund används för att uppnå tillräckligt kontrastförhållande
-   enligt WCAG 1.4.3 (4.5:1). Vit text på #4bacc6 ger bara ~2.5:1 och underkänns. */
+/* Mörkare blå (#1a7094) används istället för accent-blå (#4bacc6) eftersom
+   vit text på den mörka blå ger 5.6:1 kontrastförhållande (WCAG 1.4.3 kräver 4.5:1).
+   transition på bakgrundsfärg, skalning och skugga ger en mjuk hover- och klickeffekt. */
 .button-link {
+    display: inline-block;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    background-color: var(--primary);
-    color: #111111;
-    padding: 0.8rem 1.2rem;
+    background-color: var(--button-bg);
+    color: #ffffff;
+    padding: 0.8rem 1.6rem;
     border-radius: 999px;
     border: 1px solid transparent;
     text-decoration: none;
     font-weight: 700;
+    text-align: center;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+/* Hover: mörkare ton signalerar att knappen är klickbar */
+.button-link:hover {
+    background-color: var(--button-hover);
+}
+
+/* Active (vid klick): skalas ner något och blir ännu mörkare för att simulera ett tryck */
+.button-link:active {
+    background-color: var(--button-active);
+    transform: scale(0.96);
 }
 
 /* ===== KORTRAD =====
@@ -407,6 +425,11 @@ nav a[aria-current="page"] {
     .button-row {
         flex-wrap: wrap;
         gap: 1rem;
+    }
+
+    /* På mobil tar varje knapp full bredd för enklare tryckytor */
+    .button-link {
+        width: 100%;
     }
 
     footer {
