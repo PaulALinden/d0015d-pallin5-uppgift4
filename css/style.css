@@ -152,9 +152,10 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Första stycket i varje sidfots-div används som kolumnrubrik och ges full vit färg
-   samt versalspärrning för att skilja den från övrig text. */
-footer div>p:first-child {
+/* Sidfotens h2-rubriker ges vit färg och versalspärrning för att skilja dem från
+   övrig text. font-size sätts till 1rem eftersom sidfotens rubriker ska vara mindre
+   än sidinnehållets h2 (som är 1.5rem). */
+footer h2 {
     color: #ffffff;
     font-weight: 700;
     font-size: 1rem;
