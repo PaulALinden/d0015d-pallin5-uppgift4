@@ -69,12 +69,15 @@ body {
     background-color: var(--menu-gray);
 }
 
+/* line-height: 1.5 sätts globalt på body så att all text – inte bara <p> – har
+   tillräckligt radavstånd. WCAG 1.4.12 rekommenderar minst 1.5 för brödtext. */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: system-ui, sans-serif;
     color: var(--text);
+    line-height: 1.5;
 }
 
 /* ===== TYPOGRAFI =====
@@ -116,7 +119,10 @@ header {
 
 /* ===== HUVUDINNEHÅLL =====
    flex: 1 gör att main-elementet växer och fyller allt tillgängligt utrymme mellan
-   header och footer, vilket skjuter ned sidfoten till botten av sidan. */
+   header och footer, vilket skjuter ned sidfoten till botten av sidan.
+   max-width: 1100px begränsar radlängden på breda skärmar. Utan detta riskerar
+   textrader bli 150+ tecken långa, vilket försämrar läsbarheten avsevärt.
+   margin-inline: auto centrerar innehållet när skärmen är bredare än 1100px. */
 main {
     flex: 1;
     display: flex;
@@ -125,6 +131,9 @@ main {
     align-items: center;
     padding: 2% 5% 3rem 5%;
     background-color: var(--bg);
+    max-width: 1100px;
+    width: 100%;
+    margin-inline: auto;
 }
 
 /* ===== SIDFOT =====
@@ -232,9 +241,10 @@ nav a[aria-current="page"] {
 
 /* ===== HJÄLPMENY =====
    Hjälpmenyn (utility-bar) ges en mörkare grå bakgrund och mindre text för att
-   skilja den från primärmenyn och signalera att det är sekundär information. */
+   skilja den från primärmenyn och signalera att det är sekundär information.
+   font-size sätts till 0.875rem (14px) – minsta rekommenderade storlek för läsbarhet. */
 .utility-bar nav a {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
     border-bottom: none;
