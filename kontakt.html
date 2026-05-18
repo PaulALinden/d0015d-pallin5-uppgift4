@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <!-- Sidhuvud -->
+    <!-- Sidhuvud: innehåller logotyp och navigationsmenyer.  -->
     <header>
-        <!-- Hjälpmeny -->
+        <!-- Hjälpmeny: sekundär navigering med kontakt och öppettider. Placeras alltid synlig högst upp för att besökaren snabbt ska hitta kontaktuppgifter. -->
         <div class="utility-bar">
             <div>
                 <nav aria-label="Hjälpmeny">
@@ -24,7 +24,7 @@
                 </nav>
             </div>
         </div>
-        <!-- Logotyp och global meny -->
+        <!-- Logotyp och global meny: logotypen är en länk till startsidan. Primärmenyn är identisk på alla sidor för att besökaren alltid ska kunna navigera vidare. -->
         <div class="site-header">
             <a href="index.html">Styrka Gym</a>
             <nav aria-label="Global meny">
@@ -40,8 +40,9 @@
         </div>
     </header>
 
+    <!-- Huvudinnehåll: <main> används för sidans primära innehåll. -->
     <main>
-        <!-- Kontaktformulär: namn, e-post, ärende och meddelande -->
+        <!-- Kontaktformulär: besökaren kan skicka en förfrågan eller boka provträning. Varje fält har ett <label>-element för att koppla texten till fältet, vilket förbättrar tillgängligheten. -->
         <section class="section-center">
             <section class="page-intro">
                 <h1>Kontakt &amp; provträning</h1>
@@ -74,8 +75,7 @@
                     </select>
 
                     <label for="onskad-dag">Önskad dag eller tid</label>
-                    <input id="onskad-dag" name="onskad-dag" type="text"
-                        placeholder="Till exempel tisdag efter 17:00">
+                    <input id="onskad-dag" name="onskad-dag" type="text" placeholder="Till exempel tisdag efter 17:00">
 
                     <label for="meddelande">Meddelande</label>
                     <textarea id="meddelande" name="meddelande" required></textarea>
@@ -86,7 +86,7 @@
             </section>
         </section>
 
-        <!-- Kontaktuppgifter och öppettider -->
+        <!-- Kontaktuppgifter och öppettider: visas direkt under formuläret som ett alternativ för besökare som föredrar att ringa eller maila direkt. -->
         <section class="card-row">
             <article>
                 <h2>Kontaktuppgifter</h2>
@@ -102,7 +102,7 @@
         </section>
     </main>
 
-    <!-- Sidfot -->
+    <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. . -->
     <footer>
         <div>
             <p>Styrka Gym</p>

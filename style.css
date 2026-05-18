@@ -1,4 +1,7 @@
-/* Fargpalett och baslayout */
+/* ===== GLOBALA VARIABLER =====
+   CSS custom properties (variabler) används för att samla alla färger och radiusvärden
+   på ett ställe. Det gör designen konsekvent och gör det enkelt att ändra utseendet
+   på hela webbplatsen utan att behöva söka igenom alla filer. */
 :root {
     --bg: #edf2f4;
     --bg-soft: #f7fafb;
@@ -21,12 +24,19 @@
     --radius-small: 12px;
 }
 
+/* ===== ÅTERSTÄLLNING =====
+   Alla marginaler och padding nollställs för att webbläsarens standardvärden inte ska
+   störa layouten. box-sizing: border-box innebär att padding och border räknas in i
+   elementets totala bredd, vilket gör det lättare att styra layouten exakt. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== SIDANS GRUNDLAYOUT =====
+   body sätts till flex-kolumn med min-height: 100vh för att sidfoten alltid ska hamna
+   längst ned på sidan, även när innehållet är kort. */
 html,
 body {
     margin: 0;
@@ -41,6 +51,9 @@ body {
     color: var(--text);
 }
 
+/* ===== TYPOGRAFI =====
+   Rubrikstorlekarna minskar stegvis från h1 till h3 för att skapa en tydlig visuell
+   hierarki som hjälper besökaren att förstå sidans struktur. */
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -68,10 +81,16 @@ p {
     color: var(--muted);
 }
 
+/* ===== SIDHUVUD =====
+   header ärver bakgrundsfärgen från --menu-gray för att skilja sig tydligt från
+   sidans ljusa innehållsyta och binda samman logotyp och meny visuellt. */
 header {
     background-color: var(--menu-gray);
 }
 
+/* ===== HUVUDINNEHÅLL =====
+   flex: 1 gör att main-elementet växer och fyller allt tillgängligt utrymme mellan
+   header och footer, vilket skjuter ned sidfoten till botten av sidan. */
 main {
     flex: 1;
     display: flex;
@@ -82,6 +101,9 @@ main {
     background-color: var(--bg);
 }
 
+/* ===== SIDFOT =====
+   Flexbox med space-between delar upp de tre kolumnerna jämnt i sidfoten.
+   Samma mörka bakgrundsfärg som sidhuvudet skapar ett enhetligt ramverk kring sidan. */
 footer {
     background-color: var(--menu-gray);
     width: 100%;
@@ -97,11 +119,15 @@ footer div {
     gap: 0.5rem;
 }
 
+/* Sidfotens brödtext görs ljus och halvtransparent för att kontrastera mot den mörka bakgrunden
+   utan att konkurrera visuellt med sidhuvudets navigation. */
 footer p {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
 }
 
+/* Första stycket i varje sidfots-div används som kolumnrubrik och ges full vit färg
+   samt versalspärrning för att skilja den från övrig text. */
 footer div>p:first-child {
     color: #ffffff;
     font-weight: 700;
@@ -128,13 +154,17 @@ footer a:hover {
     color: #ffffff;
 }
 
+/* ===== NAVIGATION =====
+   nav ul görs horisontell med flexbox eftersom en meny normalt visas som en rad
+   med alternativ. list-style: none tar bort de onödiga punkterna. */
 nav ul {
     display: flex;
     gap: 1.5rem;
     list-style: none;
 }
 
-/* Varumärkeslänk */
+/* Logotyplänken stilas med vit fet text för att stå ut mot menyns grå bakgrund
+   och tydligt representera gymmets namn. */
 .site-header>a {
     color: #ffffff;
     text-decoration: none;
@@ -148,7 +178,8 @@ nav ul {
     color: var(--primary);
 }
 
-/* Globala menylänkar */
+/* Menyns länkstil: border-bottom: transparent som standard och primary-färg vid hover
+   ger en diskret men tydlig hover-indikator utan att ta upp extra utrymme. */
 nav a {
     display: inline-block;
     color: rgba(255, 255, 255, 0.85);
@@ -165,12 +196,16 @@ nav a:hover {
     border-bottom-color: var(--primary);
 }
 
+/* aria-current="page" markerar den aktiva menyposten visuellt med en understrykning
+   så att besökaren alltid vet vilken sida de befinner sig på. */
 nav a[aria-current="page"] {
     color: #ffffff;
     border-bottom-color: var(--primary);
 }
 
-/* Hjälpmenyn — mindre, sekundär stil */
+/* ===== HJÄLPMENY =====
+   Hjälpmenyn (utility-bar) ges en mörkare grå bakgrund och mindre text för att
+   skilja den från primärmenyn och signalera att det är sekundär information. */
 .utility-bar nav a {
     font-size: 0.8125rem;
     font-weight: 400;
@@ -188,6 +223,8 @@ nav a[aria-current="page"] {
     font-weight: 600;
 }
 
+/* flex-direction: row-reverse placerar hjälpmenyn till höger utan att behöva
+   ändra HTML-ordningen, vilket håller koden lättläst. */
 .utility-bar {
     background-color: var(--menu-gray-dark);
     display: flex;
@@ -195,6 +232,8 @@ nav a[aria-current="page"] {
     padding: 1rem;
 }
 
+/* site-header använder space-between för att pressa logotypen till vänster
+   och navigationen till höger, vilket är ett välkänt mönster för webbplatser. */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -203,7 +242,9 @@ nav a[aria-current="page"] {
     padding: 1rem;
 }
 
-
+/* ===== KNAPPAR (CTA) =====
+   .button-link stilas som en pill-knapp (border-radius: 999px) i primärfärgen för att
+   tydligt markera handlingsuppmaningar och skilja dem från vanliga textlänkar. */
 .button-row {
     display: flex;
     gap: 1.5rem;
@@ -223,12 +264,17 @@ nav a[aria-current="page"] {
     font-weight: 700;
 }
 
+/* ===== KORTRAD =====
+   card-row är en flexrad för att visa kort sida vid sida med lika stor bredd.
+   flex: 1 på varje kort gör att de delar på tillgängligt utrymme jämnt. */
 .card-row {
     display: flex;
     gap: 1.5rem;
     width: 100%;
 }
 
+/* page-intro är centrerad och smalare för att fungera som en välkomnande ingress
+   som drar blicken till sidans syfte innan detaljinnehållet börjar. */
 .page-intro {
     text-align: center;
     display: flex;
@@ -238,6 +284,8 @@ nav a[aria-current="page"] {
     width: 100%;
 }
 
+/* Span-elementet i kort används som en etikett i versaler med primärfärg
+   för att snabbt kommunicera kortets kategori. */
 .card>span {
     font-size: 0.75rem;
     font-weight: 700;
@@ -246,6 +294,8 @@ nav a[aria-current="page"] {
     color: var(--primary);
 }
 
+/* Initialcirklar för personal (aria-hidden="true") visas enbart visuellt
+   och döljs för skärmläsare via aria-hidden eftersom de inte tillför information. */
 .card>[aria-hidden="true"] {
     width: 3rem;
     height: 3rem;
@@ -259,7 +309,6 @@ nav a[aria-current="page"] {
     justify-content: center;
 }
 
-/* Kort — första p som etikett */
 .card>p:first-child {
     font-weight: 700;
     color: var(--text);
@@ -268,7 +317,8 @@ nav a[aria-current="page"] {
     letter-spacing: 0.05em;
 }
 
-
+/* .card ger varje kort ett vitt ytskikt, avrundat hörn och skugga för att
+   lyfta det visuellt från bakgrunden och signalera att det är klickbart innehåll. */
 .card {
     background-color: var(--surface);
     border-radius: var(--radius-medium);
@@ -280,6 +330,8 @@ nav a[aria-current="page"] {
     flex: 1;
 }
 
+/* Bilder i kort begränsas till fast höjd med object-fit: cover för att
+   undvika förvrängda bilder oavsett ursprungsproportioner. */
 .card img {
     width: 100%;
     height: 10rem;
@@ -287,6 +339,8 @@ nav a[aria-current="page"] {
     border-radius: var(--radius-small);
 }
 
+/* section-center centrerar innehållet och skapar luft mellan sektioner
+   för att göra sidan mer luftig och lätt att skanna. */
 .section-center {
     display: flex;
     flex-direction: column;
@@ -299,6 +353,12 @@ nav a[aria-current="page"] {
     margin-bottom: 1.75rem;
 }
 
+/* ===== RESPONSIV DESIGN =====
+   Vid skärmar smalare än 640px (mobiltelefoner) anpassas layouten:
+   - Navigationen staplas vertikalt
+   - Kortrad och knappar bryts till kolumner
+   - Sidfoten staplas
+   Detta görs med en media query för att ge en bra upplevelse på alla skärmstorlekar. */
 @media (max-width: 640px) {
     main {
         padding: 1rem 4% 3rem 4%;

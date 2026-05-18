@@ -1,9 +1,13 @@
+/* Ökar gapet och justerar justering i main för schemans layout
+   så att tabell och informationskort inte sitter ihop. */
 main {
     gap: 3rem;
     justify-content: flex-start;
 }
 
-/* --- Tabell-sektion: kort-skal --- */
+/* ===== TABELLCONTAINER =====
+   Tabellens sektion ges vit bakgrund, skugga och overflow: hidden för att
+   tabellens hörn ska följa sektionens border-radius utan att "sticka ut". */
 main > section:nth-child(2) {
     background-color: var(--surface);
     border-radius: var(--radius-medium);
@@ -12,11 +16,16 @@ main > section:nth-child(2) {
     width: 100%;
 }
 
+/* ===== TABELL =====
+   width: 100% gör att tabellen fyller sin container. border-collapse: collapse
+   tar bort mellanrummet mellan celler och ger ett renare intryck. */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
+/* Tabellhuvudet ges primärfärgen som bakgrund och vit text för att tydligt
+   skilja kolumnrubriker från innehållet och förstärka den blå designfärgen. */
 th {
     background-color: var(--primary);
     color: #ffffff;
@@ -27,6 +36,8 @@ th {
     letter-spacing: 0.03em;
 }
 
+/* Varje datacell ges en tunn kant nedtill för att avgränsa raderna utan
+   att göra tabellen tung visuellt. */
 td {
     padding: 0.875rem 1rem;
     border-bottom: 1px solid var(--border);
@@ -34,19 +45,26 @@ td {
     font-size: 0.9375rem;
 }
 
+/* Sista radens kantlinje tas bort för att undvika en dubbelkant mot containerns kant. */
 tbody tr:last-child td {
     border-bottom: none;
 }
 
+/* Varannan rad ges en svagt avvikande bakgrund (zebra-mönster) för att
+   göra det lättare att följa en rad horisontellt. */
 tbody tr:nth-child(even) {
     background-color: var(--bg-soft);
 }
 
+/* Hover-markering på tabellrader hjälper besökaren att se vilken rad
+   de tittar på, vilket förbättrar läsbarheten. */
 tbody tr:hover {
     background-color: var(--secondary-soft);
 }
 
-/* --- Info-kort --- */
+/* ===== INFORMATIONSKORT UNDER TABELLEN =====
+   De tre informationsartiklarna visas sida vid sida med flexbox för en
+   luftig och lättläst layout under schemat. */
 main > section:nth-child(3) {
     display: flex;
     gap: 1.5rem;
@@ -64,6 +82,8 @@ main > section:nth-child(3) article {
     flex: 1;
 }
 
+/* Kortets rubriktitel stilas i versaler med primärfärg för att fungera
+   som en tydlig etikett som snabbt kommunicerar kortets ämne. */
 main > section:nth-child(3) article > p:first-child {
     font-weight: 700;
     color: var(--primary);
@@ -86,7 +106,10 @@ main > section:nth-child(3) article a:hover {
     text-decoration: underline;
 }
 
-/* --- Mobil --- */
+/* ===== RESPONSIV DESIGN FÖR MOBILSKÄRMAR =====
+   På mobil döljs tabellhuvudet och varje rad visas istället som ett eget block
+   med data-etiketter genererade via ::before. Detta gör schemat läsbart utan
+   horisontell scrollning. Informationskorten staplas vertikalt. */
 @media (max-width: 640px) {
     thead {
         display: none;
@@ -112,6 +135,8 @@ main > section:nth-child(3) article a:hover {
         font-size: 0.9rem;
     }
 
+    /* ::before lägger till en etikett framför varje cell på mobil
+       för att ersätta den dolda tabellrubriken. */
     td::before {
         font-weight: 700;
         color: var(--text);

@@ -1,3 +1,7 @@
+/* ===== HERO-SEKTION =====
+   .hero är startsidans välkomstblocka. Den ges en vit yta med skugga och stora
+   rundade hörn för att skilja sig från den grå bakgrunden och dra blicken.
+   Flexbox i kolumn används för att stapla bild, text och knappar vertikalt. */
 .hero {
     background-color: var(--surface);
     padding: 2rem;
@@ -11,11 +15,15 @@
     gap: 1.5rem;
 }
 
+/* Bildcontainern ges flex: 2 för att ta upp dubbelt så mycket utrymme som
+   textsektionen, vilket prioriterar bilden som det visuellt starkaste elementet. */
 .hero-img {
     flex: 2;
     width: 100%;
 }
 
+/* Bilden täcker hela containern med object-fit: cover och begränsas till
+   max 420px höjd för att inte dominera hela sidan på stora skärmar. */
 .hero-img img {
     width: 100%;
     max-height: 420px;
@@ -27,6 +35,9 @@
     flex: 1;
 }
 
+/* ===== RESPONSIV DESIGN =====
+   På mobilskärmar breddas hero-sektionen till 95% av skärmbredden
+   för att utnyttja det tillgängliga utrymmet bättre. */
 @media (max-width: 640px) {
     .hero {
         width: 95%;

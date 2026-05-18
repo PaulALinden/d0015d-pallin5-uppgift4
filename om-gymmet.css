@@ -1,8 +1,12 @@
+/* Ökar gapet och justerar justering i main för om-gymmet-sidan
+   så att sektioner om lokaler, personal och besök andas. */
 main {
     gap: 3rem;
     justify-content: flex-start;
 }
 
+/* Listan med lokaldetaljer tas bort standardkulpunkter och styckas med
+   vertikal flex för att varje punkt ska visas på egen rad. */
 main ul {
     list-style: none;
     display: flex;
@@ -10,12 +14,16 @@ main ul {
     gap: 0.5rem;
 }
 
+/* ::before lägger till ett bockmarkerat prefix (✓) i primärfärgen
+   för att ge listan ett positivt och strukturerat intryck. */
 main ul li::before {
     content: "✓  ";
     color: var(--primary);
     font-weight: 700;
 }
 
+/* Bilder i om-gymmet-sektioner begränsas i höjd och täcker ytan med
+   object-fit: cover för att undvika förvrängning av olika bilder. */
 main section img {
     width: 100%;
     max-height: 20rem;

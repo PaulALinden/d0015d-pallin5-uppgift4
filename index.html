@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <!-- Sidhuvud -->
+    <!-- Sidhuvud: innehåller logotyp och navigationsmenyer.  -->
     <header>
-        <!-- Hjälpmeny -->
+        <!-- Hjälpmeny: sekundär navigering med kontakt och öppettider. Placeras alltid synlig högst upp för att besökaren snabbt ska hitta kontaktuppgifter. -->
         <div class="utility-bar">
             <div>
                 <nav aria-label="Hjälpmeny">
@@ -23,7 +23,7 @@
                 </nav>
             </div>
         </div>
-        <!-- Logotyp och global meny -->
+        <!-- Logotyp och global meny: logotypen är en länk till startsidan. Primärmenyn är identisk på alla sidor för att besökaren alltid ska kunna navigera vidare. -->
         <div class="site-header">
             <a href="index.html">Styrka Gym</a>
             <nav aria-label="Global meny">
@@ -39,53 +39,59 @@
         </div>
     </header>
 
-    <main >
-        <!-- Hero: välkomstbild, rubrik och CTA-knappar -->
+    <!-- Huvudinnehåll: <main> används för sidans primära innehåll. -->
+    <main>
+        <!-- Hero-sektion: presenterar gymmet med bild, rubrik och knappar. Utformad för att ge besökaren en snabb överblick och direkta val att gå vidare. -->
         <section class="hero">
+            <!-- Bakgrundsbild: visar gymmiljön för att ge ett visuellt första intryck av gymmet. -->
             <section class="hero-img">
-                <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800&auto=format&q=80" alt="Träning på Styrka Gym">
+                <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800&auto=format&q=80"
+                    alt="Träning på Styrka Gym">
             </section>
 
+            <!-- Rubrik och introduktionstext: presenterar gymmets namn och erbjudande kortfattat. H1 används för sidans huvudrubrik. -->
             <div class="hero-copy">
                 <h1>Träna smart, bli stark</h1>
                 <p>Styrka Gym är ett lokalt gym med fria vikter, maskiner och gruppträning.</p>
             </div>
 
+            <!-- CTA-knappar: tre direkta knappar för provträning, schema och priser. Placerade centralt för att underlätta besökarens nästa steg. -->
             <div class="button-row">
                 <a class="button-link" href="kontakt.html">Provträning</a>
                 <a class="button-link" href="schema.html">Se schema</a>
                 <a class="button-link" href="priser.html">Se priser</a>
             </div>
 
+            <!-- Öppettider: visas direkt på startsidan för att snabbt svara på en av besökarens vanligaste frågor. -->
             <div class="quick-info">
                 <p>Öppet 05:00–23:00 alla dagar</p>
             </div>
 
         </section>
 
-        
+
     </main>
 
-    <!-- Sidfot -->
-    <footer>  
-            <div>
-                <p>Styrka Gym</p>
-                <p>Modern träning för alla nivåer med fokus på tydlighet, trygghet och träningsglädje.</p>
-            </div>
-            <div>
-                <p>Snabblänkar</p>
-                <ul>
-                    <li><a href="schema.html">Schema</a></li>
-                    <li><a href="priser.html">Priser</a></li>
-                    <li><a href="kontakt.html">Provträning</a></li>
-                </ul>
-            </div>
-            <div>
-                <p>Kontakt</p>
-                <p>Storgatan 12, 972 38 Luleå</p>
-                <p>0920-55 10 40</p>
-                <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
-            </div>
+    <!-- Sidfot: samlar kontaktuppgifter och snabblänkar. . -->
+    <footer>
+        <div>
+            <p>Styrka Gym</p>
+            <p>Modern träning för alla nivåer med fokus på tydlighet, trygghet och träningsglädje.</p>
+        </div>
+        <div>
+            <p>Snabblänkar</p>
+            <ul>
+                <li><a href="schema.html">Schema</a></li>
+                <li><a href="priser.html">Priser</a></li>
+                <li><a href="kontakt.html">Provträning</a></li>
+            </ul>
+        </div>
+        <div>
+            <p>Kontakt</p>
+            <p>Storgatan 12, 972 38 Luleå</p>
+            <p>0920-55 10 40</p>
+            <p><a href="mailto:hej@styrkagym.se">hej@styrkagym.se</a></p>
+        </div>
     </footer>
 </body>
 

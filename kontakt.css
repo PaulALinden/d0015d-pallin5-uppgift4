@@ -1,17 +1,27 @@
+/* Ökar gapet och justerar justering i main för kontaktsidans layout
+   så att formulär och kontaktuppgifter inte sitter ihop. */
 main {
     gap: 3rem;
     justify-content: flex-start;
 }
 
+/* page-intro begränsas i bredd för att inte bli för bred på stora skärmar,
+   vilket gör introduktionstexten lättare att läsa. */
 .page-intro {
     max-width: 35rem;
 }
 
+/* Kontaktuppgifter och öppettider centreras i sina artikelkolumner
+   för att ge ett städat utseende. */
 .card-row > article {
     flex: 1;
     text-align: center;
 }
 
+/* ===== FORMULÄR =====
+   Formuläret visas som en flexkolumn för att stapla fält, etiketter och knappar
+   vertikalt. max-width: 35rem hindrar formuläret från att bli för brett
+   och svårt att fylla i på stora skärmar. */
 form {
     display: flex;
     flex-direction: column;
@@ -22,12 +32,16 @@ form {
     text-align: left;
 }
 
+/* Etiketter ges fet stil för att tydligt koppla ihop varje label med sitt fält,
+   vilket också förbättrar tillgängligheten. */
 label {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--text);
 }
 
+/* Alla formulärfält delas gemensam stil för konsekvent utseende.
+   font-family: inherit säkerställer att typsnittet matchar resten av sidan. */
 input,
 select,
 textarea {
@@ -41,6 +55,8 @@ textarea {
     background-color: var(--surface);
 }
 
+/* Focus-stil med outline i primärfärgen signalerar tydligt vilket fält
+   som är aktivt, vilket förbättrar tangentbordsanvändningen. */
 input:focus,
 select:focus,
 textarea:focus {
@@ -49,11 +65,15 @@ textarea:focus {
     border-color: var(--primary);
 }
 
+/* textarea ges en minimihöjd för att ge plats för ett meddelande och
+   resize: vertical låter användaren anpassa höjden men inte bredden. */
 textarea {
     min-height: 8rem;
     resize: vertical;
 }
 
+/* Skicka-knappen stilas som en pill-knapp i primärfärgen för att
+   tydligt markera att det är formulärets huvudåtgärd. */
 button[type="submit"] {
     background-color: var(--primary);
     color: #ffffff;
@@ -72,6 +92,8 @@ button[type="submit"]:hover {
     background-color: var(--primary-dark);
 }
 
+/* Bekräftelsemeddelandet ges primärfärgen för att signalera att
+   formuläret skickats utan att använda ett störande popup. */
 #confirmation {
     color: var(--primary);
     font-weight: 600;
@@ -79,6 +101,9 @@ button[type="submit"]:hover {
     text-align: center;
 }
 
+/* ===== RESPONSIV DESIGN =====
+   På mobil tillåts formuläret och page-intro ta full bredd
+   för att utnyttja skärmens hela utrymme. */
 @media (max-width: 640px) {
     .page-intro {
         max-width: 100%;
