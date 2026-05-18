@@ -14,14 +14,37 @@
     --primary-dark: #2d8ea7;
     --secondary: #111111;
     --secondary-soft: #d8eef4;
-    --menu-gray: #7f7f7f;
-    --menu-gray-dark: #696969;
+    --menu-gray: #505050;
+    --menu-gray-dark: #404040;
     --link: #4bacc6;
     --link-dark: #2d8ea7;
     --shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
     --radius-large: 28px;
     --radius-medium: 18px;
     --radius-small: 12px;
+}
+
+/* ===== HOPPA TILL INNEHÅLL (SKIP LINK) =====
+   Dold länk som visas vid tangentbordsnavigering. Kravet finns i WCAG 2.4.1 (nivå A):
+   tangentbordsanvändare ska kunna hoppa förbi återkommande navigation och nå
+   sidans innehåll utan att tabba igenom alla menylänkar. */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 1rem;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-small);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    z-index: 9999;
+}
+
+/* Länken visas synligt när den får fokus (tab-knappen) */
+.skip-link:focus {
+    left: 1rem;
 }
 
 /* ===== ÅTERSTÄLLNING =====
@@ -252,11 +275,13 @@ nav a[aria-current="page"] {
     flex: 1;
 }
 
+/* Mörk text på ljusblå bakgrund används för att uppnå tillräckligt kontrastförhållande
+   enligt WCAG 1.4.3 (4.5:1). Vit text på #4bacc6 ger bara ~2.5:1 och underkänns. */
 .button-link {
     margin-top: 1rem;
     margin-bottom: 1rem;
     background-color: var(--primary);
-    color: #ffffff;
+    color: #111111;
     padding: 0.8rem 1.2rem;
     border-radius: 999px;
     border: 1px solid transparent;

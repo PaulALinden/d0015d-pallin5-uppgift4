@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <!-- Skip-länk: visas bara vid tangentbordsnavigering. Låter användaren hoppa förbi menyn direkt till innehållet (WCAG 2.4.1). -->
+    <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
     <!-- Sidhuvud: innehåller logotyp och navigationsmenyer.  -->
     <header>
         <!-- Hjälpmeny: sekundär navigering med kontakt och öppettider. Placeras alltid synlig högst upp för att besökaren snabbt ska hitta kontaktuppgifter. -->
@@ -41,7 +43,7 @@
     </header>
 
     <!-- Huvudinnehåll: <main> används för sidans primära innehåll. -->
-    <main>
+    <main id="main-content">
         <!-- Kontaktformulär: besökaren kan skicka en förfrågan eller boka provträning. Varje fält har ett <label>-element för att koppla texten till fältet, vilket förbättrar tillgängligheten. -->
         <section class="section-center">
             <section class="page-intro">

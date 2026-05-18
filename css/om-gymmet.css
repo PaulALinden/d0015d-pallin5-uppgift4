@@ -31,3 +31,7 @@ main section img {
     border-radius: var(--radius-medium);
     margin-top: 1rem;
 }
+
+.space-bottom {
+    margin-bottom: 2rem;
+}
