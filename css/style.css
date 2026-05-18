@@ -120,20 +120,18 @@ header {
 /* ===== HUVUDINNEHÅLL =====
    flex: 1 gör att main-elementet växer och fyller allt tillgängligt utrymme mellan
    header och footer, vilket skjuter ned sidfoten till botten av sidan.
-   max-width: 1100px begränsar radlängden på breda skärmar. Utan detta riskerar
-   textrader bli 150+ tecken långa, vilket försämrar läsbarheten avsevärt.
-   margin-inline: auto centrerar innehållet när skärmen är bredare än 1100px. */
+   padding-inline använder max() för att automatiskt öka sidmarginalen på breda skärmar:
+   calc((100% - 1100px) / 2) ger exakt den padding som krävs för att hålla innehållet
+   inom 1100px. På smala skärmar (< 1100px) faller det tillbaka till 5%.
+   Bakgrunden täcker hela bredden eftersom main inte har max-width. */
 main {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2% 5% 3rem 5%;
+    padding: 2% max(5%, calc((100% - 1100px) / 2)) 3rem;
     background-color: var(--bg);
-    max-width: 1100px;
-    width: 100%;
-    margin-inline: auto;
 }
 
 /* ===== SIDFOT =====
